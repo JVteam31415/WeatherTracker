@@ -5,53 +5,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Tracker</title>
+    <link rel="stylesheet" href="./Assets/css/style.css">
 </head>
 <body>
     
     <input id="city-name" placeholder ="your city here" type="text"></input>
     <button id="submit-city">Submit City</button>
     
-    <div id="current">
+    <div id="current" class = "bigcard">
         <div id="city-name"></div>
+        <img id="todaysWeather">
         <div id="temp"></div>
         <div  id="hum"></div>
         <div id="wind"></div>
         <div id="UV"> </div>
 
     </div>
-    <div id ="forecast">
-        <div id="day1" class="forecastDay">
+    <div id ="forecast" class="forecast">
+        <section id="day1" class="forecastDay">
             <p id="date"></p>
             <img id = "weatherimg">
             <p id="temp"></p>
             <p id="hum"></p>
-        </div>
-        <div id="day2" class="forecastDay">
+        </section>
+        <section id="day2" class="forecastDay">
             <p id="date"></p>
             <img id = "weatherimg">
             <p id="temp"></p>
             <p id="hum"></p>
-        </div>
-        <div id="day3" class="forecastDay">
+        </section>
+        <section id="day3" class="forecastDay">
             <p id="date"></p>
             <img id = "weatherimg">
             <p id="temp"></p>
             <p id="hum"></p>
-        </div>
-        <div id="day4" class="forecastDay">
+        </section>
+        <section id="day4" class="forecastDay">
             <p id="date"></p>
             <img id = "weatherimg">
             <p id="temp"></p>
             <p id="hum"></p>
-        </div>
-        <div id="day5" class="forecastDay">
+        </section>
+        <section id="day5" class="forecastDay">
             <p id="date"></p>
             <img id = "weatherimg">
             <p id="temp"></p>
             <p id="hum"></p>
-        </div>
+        </section>
     </div>
-    <div id="search-history">
+    <div id="search-history" class="side">
+        Previous Searches:
 
     </div>
     <script src="config.js"></script>
