@@ -11,6 +11,22 @@ var searchHistory = document.getElementById("search-history")
 if(!localStorage.getItem("numberWeatherCities") ||!localStorage.getItem("city1")){
     localStorage.setItem("numberWeatherCities", 0);
 }
+else{
+    for(var i=0;i<localStorage.getItem("numberWeatherCities");i++){
+        var x = i+1
+        var toBeAdded = document.createElement('div');
+        toBeAdded.textContent = localStorage.getItem("city"+x);
+        toBeAdded.addEventListener("click", function(){
+            var newCity = toBeAdded.textContent;
+            
+            addForecast(newCity);
+    
+            addFiveday(newCity);
+            addToMem(newCity);
+        });
+        searchHistory.appendChild(toBeAdded);
+    }
+}
 
 function pickCity(){
     var newCity="";
@@ -74,7 +90,7 @@ function addForecast(cityName){
         current.children[1].width = 150
         current.children[1].height = 150
 
-        current.children[2].textContent = "Temperature:"+(9*(temp-273.15)/5+32) +" F"
+        current.children[2].textContent = "Temperature:"+ ~~(9*(temp-273.15)/5+32) +" F"
         current.children[3].textContent = "Humidity"+hum+"%"
         current.children[4].textContent ="Wind speed"+wind+" mph" 
         current.children[5].textContent="UV:"+uv;
@@ -116,7 +132,7 @@ function addFiveday(cityName){
             thisDay.children[1].width = 100
             thisDay.children[1].height = 100
 
-            thisDay.children[2].textContent = "Temperature:"+((9*(data.list[i].main.temp-273.15)/5)+32) +" F";
+            thisDay.children[2].textContent = "Temperature:"+ ~~((9*(data.list[i].main.temp-273.15)/5)+32) +" F";
             thisDay.children[3].textContent = "Humidity:"+data.list[i].main.humidity +"%";
         }
         //for each day
@@ -157,7 +173,9 @@ function UV(lat, long){
 
 function addToMem(cityName){
     var oldnum = localStorage.getItem("numberWeaterCities");
-    localStorage.setItem("numberWeatherCities",oldnum+1);
+    var newnum = oldnum+1;
+    localStorage.setItem("numberWeatherCities",newnum);
+    localStorage.setItem("city"+newnum ,cityName)
 
     var toBeAdded = document.createElement('div');
     toBeAdded.textContent = cityName;
