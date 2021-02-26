@@ -1,5 +1,5 @@
 
-var API_KEY = config['API_KEY'];
+var API_KEY = 'df696433493d4d7ffe02fe68d06ef78a';
 var submitButton = document.querySelector('#submit-city');
 var cityNameInput = document.querySelector('#city-name');
 var lastInput = "";
