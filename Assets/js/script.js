@@ -84,6 +84,9 @@ function addForecast(cityName){
         else if(weather=="Clear"){
             current.children[1].src="./Assets/images/sun.jpg"
         }
+        else if(weather=="Mist"){
+            current.children[1].src="./Assets/images/Mist.jpg"
+        }
         else{
             current.children[1].src="";
         }
@@ -125,6 +128,9 @@ function addFiveday(cityName){
             }
             else if(weather=="Clear"){
                 thisDay.children[1].src="./Assets/images/sun.jpg"
+            }
+            else if(weather=="Mist"){
+                thisDay.children[1].src="./Assets/images/Mist.jpg"
             }
             else{
                 thisDay.children[1].src="";
